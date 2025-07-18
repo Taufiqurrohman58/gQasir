@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <!-- Home Fragment -->
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.kerdus.gqasir.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+        <!-- Navigasi ke DetailFragment -->
+        <action
+            android:id="@+id/action_HomeFragment_to_DetailFragment"
+            app:destination="@id/detailFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.kerdus.gqasir.ui.add.AddFragment"
+        android:label="Add"
+        tools:layout="@layout/fragment_add" />
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.kerdus.gqasir.ui.detail.DetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_detail">
+
+        <!-- Arahkan ke ResultFragment -->
+        <action
+            android:id="@+id/action_detailFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+
+        <!-- Arahkan ke EditFragment -->
+        <action
+            android:id="@+id/action_detailFragment_to_editFragment"
+            app:destination="@id/editFragment" />
+    </fragment>
+
+    <!-- Result Fragment -->
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.kerdus.gqasir.ui.result.ResultFragment"
+        android:label="Result"
+        tools:layout="@layout/fragment_result" />
+
+    <!-- Edit Fragment -->
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.kerdus.gqasir.ui.edit.EditFragment"
+        android:label="Edit"
+        tools:layout="@layout/fragment_edit" />
+
+    <!-- Tambahan halaman lain jika ada -->
+    <fragment
+        android:id="@+id/nav_warehouse"
+        android:name="com.kerdus.gqasir.ui.warehouse.WarehouseFragment"
+        android:label="Warehouse"
+        tools:layout="@layout/fragment_warehouse" >
+
+    <action
+        android:id="@+id/action_warehouseFragment_to_editWarehouseFragment"
+        app:destination="@id/editWarehouseFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/editWarehouseFragment"
+        android:name="com.kerdus.gqasir.ui.editwarehouse.EditWarehouseFragment"
+        android:label="Edit Warehouse"
+        tools:layout="@layout/fragment_edit_warehouse" />
+
+
+
+    <fragment
+        android:id="@+id/nav_assignment"
+        android:name="com.kerdus.gqasir.ui.assigment.AssigmentFragment"
+        android:label="Assigment"
+        tools:layout="@layout/fragment_assigment" />
+
+</navigation>

@@ -12,11 +12,16 @@ class ProdukViewModel(private val repository: Repository) : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    fun loadProduk() {
+    fun loadProduk(category: String? = null) {
         viewModelScope.launch {
             _isLoading.value = true
             try {
-                _produk.value = repository.getProduk()
+                val allProduk = repository.getProduk()
+                _produk.value = if (category.isNullOrEmpty() || category == "all") {
+                    allProduk
+                } else {
+                    allProduk.filter { it.category.equals(category, ignoreCase = true) }
+                }
             } catch (e: Exception) {
                 e.printStackTrace()
             } finally {
@@ -24,6 +29,7 @@ class ProdukViewModel(private val repository: Repository) : ViewModel() {
             }
         }
     }
+
 }
 
 class ProdukViewModelFactory(private val repository: Repository) : ViewModelProvider.Factory {

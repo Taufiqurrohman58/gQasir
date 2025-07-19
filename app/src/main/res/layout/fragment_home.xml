@@ -38,6 +38,15 @@
                 android:textColor="#000000" />
 
             <Button
+                android:id="@+id/btnMakanan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Makanan"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#000000" />
+
+            <Button
                 android:id="@+id/btnMinuman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,19 +56,19 @@
                 android:textColor="#000000" />
 
             <Button
-                android:id="@+id/btnPopmie"
+                android:id="@+id/btnSnack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Popmie"
+                android:text="Snack"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="#EEEEEE"
                 android:textColor="#000000" />
 
             <Button
-                android:id="@+id/btnSnack"
+                android:id="@+id/btnPopmie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Snack"
+                android:text="Popmie"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="#EEEEEE"
                 android:textColor="#000000" />
@@ -94,9 +103,9 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="100dp"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/errorMessage"

@@ -34,6 +34,18 @@
         android:label="Detail"
         tools:layout="@layout/fragment_detail">
 
+        <argument
+            android:name="produkId"
+            app:argType="string" />
+
+        <argument
+            android:name="nama"
+            app:argType="string" />
+
+        <argument
+            android:name="harga"
+            app:argType="string" />
+
         <!-- Arahkan ke ResultFragment -->
         <action
             android:id="@+id/action_detailFragment_to_resultFragment"

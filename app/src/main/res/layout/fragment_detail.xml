@@ -37,8 +37,9 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <!-- Stok Masuk -->
+            <!-- Stok Kantin-->
             <LinearLayout
+                android:id="@+id/tvStokKantin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="14dp"
@@ -48,121 +49,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Stok Masuk"
+                    android:text="Stok Kantin"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/valueStokMasuk"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0 pcs"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <!-- Stok Awal -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Stok Awal"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/valueStokAwal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0 pcs"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <!-- Jumlah Stok -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Jumlah Stok"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/valueJumlahStok"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <!-- Terjual -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Terjual"
-                    android:textSize="16sp" />
-
-                <ImageButton
-                    android:id="@+id/btnMinusTerjual"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:background="@drawable/bg_round_button_blue"
-                    android:contentDescription="Kurangi"
-                    android:padding="4dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/baseline_remove_24" />
-
-                <TextView
-                    android:id="@+id/valueTerjual"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
-                    android:text="0"
-                    android:textSize="16sp" />
-
-                <ImageButton
-                    android:id="@+id/btnPlusTerjual"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:background="@drawable/bg_round_button_red"
-                    android:contentDescription="Tambah"
-                    android:padding="4dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/baseline_add_24" />
-            </LinearLayout>
-
-            <!-- Sisa Stok -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Sisa Stok"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/valueSisaStok"
+                    android:id="@+id/valueStokKantin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
@@ -176,6 +67,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tvHarga"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -192,6 +84,8 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
+
+
         </LinearLayout>
     </ScrollView>
 

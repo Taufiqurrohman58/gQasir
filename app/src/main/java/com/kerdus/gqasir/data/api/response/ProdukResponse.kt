@@ -1,12 +1,15 @@
 package com.kerdus.gqasir.data.api.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
+
 
 data class ProdukResponse(
 	@field:SerializedName("ProdukResponse")
 	val produkResponse: List<ProdukResponseItem>
 )
-
+@Parcelize
 data class ProdukResponseItem(
 	@field:SerializedName("stock_gudang")
 	val stockGudang: Int,
@@ -28,4 +31,4 @@ data class ProdukResponseItem(
 
 	@field:SerializedName("category")
 	val category: String
-)
+): Parcelable

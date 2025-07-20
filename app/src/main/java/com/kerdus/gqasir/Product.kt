@@ -1,6 +1,8 @@
 package com.kerdus.gqasir
 
-class Productdata class Product(
-    val name: String,
-    val price: String
+import com.kerdus.gqasir.data.api.response.ProdukResponseItem
+
+data class Product(
+    val item: ProdukResponseItem
 )
+

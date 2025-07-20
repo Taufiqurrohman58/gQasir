@@ -55,9 +55,13 @@ class HomeFragment : Fragment() {
 
         adapter = ProductAdapter(
             mutableListOf(),
-            onItemClick = {
-                findNavController().navigate(R.id.action_HomeFragment_to_DetailFragment)
+            onItemClick = { product ->
+                val bundle = Bundle().apply {
+                    putParcelable("produk", product.item)
+                }
+                findNavController().navigate(R.id.action_HomeFragment_to_DetailFragment, bundle)
             },
+
             onDelete = { product ->
                 val currentList = adapter.getProducts().toMutableList()
                 currentList.remove(product)
@@ -69,9 +73,7 @@ class HomeFragment : Fragment() {
         binding.recyclerViewProducts.adapter = adapter
 
         viewModel.produk.observe(viewLifecycleOwner) { produkList ->
-            val converted = produkList.map {
-                Product(it.name, "Rp. ${it.price}")
-            }
+            val converted = produkList.map { Product(it) }
             fullProductList = converted // simpan semua produk
             adapter.updateData(converted)
         }
@@ -157,7 +159,7 @@ class HomeFragment : Fragment() {
             override fun onQueryTextChange(newText: String?): Boolean {
                 val filtered = if (!newText.isNullOrEmpty()) {
                     fullProductList.filter {
-                        it.name.contains(newText, ignoreCase = true)
+                        it.item.name.contains(newText, ignoreCase = true)
                     }
                 } else {
                     fullProductList

@@ -34,8 +34,8 @@ class ProductAdapter(
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val product = products[position]
-        holder.name.text = product.name
-        holder.price.text = product.price
+        holder.name.text = product.item.name
+        holder.price.text = product.item.price
 
         holder.itemView.setOnClickListener {
             onItemClick(product)

@@ -33,32 +33,12 @@
             android:textSize="16sp"
             android:layout_marginBottom="12dp" />
 
-        <!-- Stok Masuk -->
+        <!-- Kategori Barang -->
         <EditText
-            android:id="@+id/etStokMasuk"
+            android:id="@+id/etKategoriBarang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Stok Masuk"
-            android:inputType="number"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Stok Awal -->
-        <EditText
-            android:id="@+id/etStokAwal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Stok Awal"
-            android:inputType="number"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Terjual -->
-        <EditText
-            android:id="@+id/etTerjual"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Jumlah Terjual"
+            android:hint="Kategori Barang"
             android:inputType="number"
             android:textSize="16sp"
             android:layout_marginBottom="12dp" />
@@ -71,7 +51,18 @@
             android:hint="Harga"
             android:inputType="number"
             android:textSize="16sp"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="12dp" />
+
+        <!-- Stok Kantin -->
+        <EditText
+            android:id="@+id/etStokKantin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Stok Kantin"
+            android:inputType="number"
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp" />
+
 
         <!-- Tombol Simpan -->
         <Button

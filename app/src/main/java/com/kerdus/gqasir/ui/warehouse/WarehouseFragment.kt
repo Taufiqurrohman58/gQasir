@@ -31,7 +31,7 @@ class WarehouseFragment : Fragment() {
 
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
-        menu.findItem(R.id.searchButton)?.isVisible = true // ✅ Tampilkan Search
+        menu.findItem(R.id.searchButton)?.isVisible = true
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

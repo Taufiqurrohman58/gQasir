@@ -15,7 +15,7 @@ data class ProdukResponseItem(
 	val stockGudang: Int,
 
 	@field:SerializedName("price")
-	val price: String,
+	val price: Int,
 
 	@field:SerializedName("stock_kantin")
 	val stockKantin: Int,

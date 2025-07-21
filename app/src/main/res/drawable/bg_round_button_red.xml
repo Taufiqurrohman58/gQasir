@@ -3,8 +3,8 @@
     android:shape="rectangle">
 
     <!-- Warna latar biru -->
-    <solid android:color="#FF7043" />
-4
+    <solid android:color="#E91E63" />
+
     <!-- Border abu-abu -->
     <stroke
         android:color="#DDDDDD"

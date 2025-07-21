@@ -3,6 +3,7 @@ package com.kerdus.gqasir.data.api.retrofit
 import com.kerdus.gqasir.Product
 import com.kerdus.gqasir.data.api.request.ProdukCreateRequest
 import com.kerdus.gqasir.data.api.request.ProdukUpdateRequest
+import com.kerdus.gqasir.data.api.request.TransaksiRequest
 import com.kerdus.gqasir.data.api.response.LoginResponse
 import com.kerdus.gqasir.data.api.response.ProdukResponseItem
 import retrofit2.Call
@@ -27,7 +28,6 @@ interface ApiService {
     @Headers("Content-Type: application/json")
     @POST("api/auth/login")
     suspend fun login(@Body request: LoginRequest): LoginResponse
-
 
     @GET("api/produk")
     suspend fun getProduk(
@@ -59,8 +59,11 @@ interface ApiService {
         @Path("id") id: Int
     ): Response<Unit>
 
-
-
+    @POST("api/transaksi")
+    suspend fun postTransaksi(
+        @Header("Authorization") token: String,
+        @Body transaksi: TransaksiRequest
+    ): Response<Unit>
 
 }
 

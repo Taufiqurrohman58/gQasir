@@ -2,6 +2,7 @@ package com.kerdus.gqasir.data
 
 import com.kerdus.gqasir.data.api.request.ProdukCreateRequest
 import com.kerdus.gqasir.data.api.request.ProdukUpdateRequest
+import com.kerdus.gqasir.data.api.request.TransaksiRequest
 import com.kerdus.gqasir.data.api.response.LoginResponse
 import com.kerdus.gqasir.data.api.response.ProdukResponseItem
 import com.kerdus.gqasir.data.api.retrofit.ApiService
@@ -51,6 +52,18 @@ class Repository private constructor(
             false
         }
     }
+
+    suspend fun postTransaksi(request: TransaksiRequest): Boolean {
+        return try {
+            val token = userPreference.getSession().first().token
+            val response = apiService.postTransaksi("Bearer $token", request)
+            response.isSuccessful
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
+        }
+    }
+
 
     suspend fun saveSession(user: UserModel) {
         userPreference.saveSession(user)

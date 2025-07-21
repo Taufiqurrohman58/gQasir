@@ -22,11 +22,16 @@
             app:destination="@id/addFragment" />
     </fragment>
 
+
     <fragment
         android:id="@+id/addFragment"
         android:name="com.kerdus.gqasir.ui.add.AddFragment"
-        android:label="Add"
-        tools:layout="@layout/fragment_add" />
+        android:label="Add">
+        <action
+            android:id="@+id/action_addFragment_to_homeFragment"
+            app:destination="@id/nav_home" />
+    </fragment>
+
 
     <fragment
         android:id="@+id/detailFragment"
@@ -68,8 +73,15 @@
     <fragment
         android:id="@+id/editFragment"
         android:name="com.kerdus.gqasir.ui.edit.EditFragment"
-        android:label="Edit"
-        tools:layout="@layout/fragment_edit" />
+        android:label="Edit Produk"
+        tools:layout="@layout/fragment_edit">
+
+        <!-- Tambahkan action ini -->
+        <action
+            android:id="@+id/action_editFragment_to_homeFragment"
+            app:destination="@id/nav_home" />
+    </fragment>
+
 
     <!-- Tambahan halaman lain jika ada -->
     <fragment

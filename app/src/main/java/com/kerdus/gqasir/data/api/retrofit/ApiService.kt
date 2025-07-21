@@ -1,6 +1,7 @@
 package com.kerdus.gqasir.data.api.retrofit
 
 import com.kerdus.gqasir.Product
+import com.kerdus.gqasir.data.api.request.ProdukUpdateRequest
 import com.kerdus.gqasir.data.api.response.LoginResponse
 import com.kerdus.gqasir.data.api.response.ProdukResponseItem
 import retrofit2.Call
@@ -9,6 +10,8 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Headers
 import retrofit2.http.POST
+import retrofit2.http.PUT
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 data class LoginRequest(
@@ -33,5 +36,13 @@ interface ApiService {
         @Query("kategori") kategori: String,
         @Header("Authorization") token: String
     ): Call<List<Product>>
+
+    @PUT("api/produk/{id}")
+    suspend fun updateProduk(
+        @Path("id") id: Int,
+        @Header("Authorization") token: String,
+        @Body produk: ProdukUpdateRequest
+    ): ProdukResponseItem
+
 }
 

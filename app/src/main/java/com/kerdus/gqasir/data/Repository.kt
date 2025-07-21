@@ -1,5 +1,6 @@
 package com.kerdus.gqasir.data
 
+import com.kerdus.gqasir.data.api.request.ProdukUpdateRequest
 import com.kerdus.gqasir.data.api.response.LoginResponse
 import com.kerdus.gqasir.data.api.response.ProdukResponseItem
 import com.kerdus.gqasir.data.api.retrofit.ApiService
@@ -23,6 +24,11 @@ class Repository private constructor(
         val token = userPreference.getSession().first().token
         return apiService.getProduk("Bearer $token")
     }
+    suspend fun updateProduk(id: Int, request: ProdukUpdateRequest): ProdukResponseItem {
+        val token = userPreference.getSession().first().token
+        return apiService.updateProduk(id, "Bearer $token", request)
+    }
+
 
     suspend fun saveSession(user: UserModel) {
         userPreference.saveSession(user)

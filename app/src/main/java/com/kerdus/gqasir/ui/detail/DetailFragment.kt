@@ -50,8 +50,15 @@ class DetailFragment : Fragment() {
 
         // Navigasi ke EditFragment
         binding.btnEditt.setOnClickListener {
-            findNavController().navigate(R.id.action_detailFragment_to_editFragment)
+            produk?.let {
+                val bundle = Bundle().apply {
+                    putParcelable("produk", it)
+                }
+                findNavController().navigate(R.id.action_detailFragment_to_editFragment, bundle)
+            }
         }
+
+
 
         // Tombol Simpan diklik, langsung navigasi ke ResultFragment
         binding.btnSimpan.setOnClickListener {

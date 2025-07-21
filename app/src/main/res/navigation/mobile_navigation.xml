@@ -102,8 +102,6 @@
         android:label="Edit Warehouse"
         tools:layout="@layout/fragment_edit_warehouse" />
 
-
-
     <fragment
         android:id="@+id/nav_assignment"
         android:name="com.kerdus.gqasir.ui.assigment.AssigmentFragment"

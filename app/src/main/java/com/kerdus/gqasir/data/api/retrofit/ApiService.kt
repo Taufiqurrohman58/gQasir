@@ -1,10 +1,12 @@
 package com.kerdus.gqasir.data.api.retrofit
 
 import com.kerdus.gqasir.Product
+import com.kerdus.gqasir.data.api.request.ProdukCreateRequest
 import com.kerdus.gqasir.data.api.request.ProdukUpdateRequest
 import com.kerdus.gqasir.data.api.response.LoginResponse
 import com.kerdus.gqasir.data.api.response.ProdukResponseItem
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -43,6 +45,13 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Body produk: ProdukUpdateRequest
     ): ProdukResponseItem
+
+    @POST("api/produk")
+    suspend fun postProduk(
+        @Header("Authorization") token: String,
+        @Body request: ProdukCreateRequest
+    ): Response<Unit>
+
 
 }
 

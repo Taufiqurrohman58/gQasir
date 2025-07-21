@@ -108,15 +108,15 @@ class HomeFragment : Fragment() {
         }
 
         binding.btnPopmie.setOnClickListener {
-            selectedCategory = "Pop Mie"
+            selectedCategory = "PopMie"
             updateCategoryButtons(binding.btnPopmie)
-            viewModel.loadProduk("Pop Mie")
+            viewModel.loadProduk("PopMie")
         }
 
         binding.btnTiket.setOnClickListener {
-            selectedCategory = "Tiket Kolam"
+            selectedCategory = "Tiket"
             updateCategoryButtons(binding.btnTiket)
-            viewModel.loadProduk("Tiket Kolam")
+            viewModel.loadProduk("Tiket")
         }
 
         // Set default kategori

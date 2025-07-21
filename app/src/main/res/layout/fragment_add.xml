@@ -23,9 +23,10 @@
             android:textColor="#333333"
             android:layout_marginBottom="18dp" />
 
+
         <!-- Nama Barang -->
         <EditText
-            android:id="@+id/etNamaBarang"
+            android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nama Barang"
@@ -33,25 +34,25 @@
             android:textSize="16sp"
             android:layout_marginBottom="12dp" />
 
-        <!-- Stok Masuk -->
+        <!-- Category -->
         <EditText
-            android:id="@+id/etStokMasuk"
+            android:id="@+id/etCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Stok Masuk"
-            android:inputType="number"
+            android:hint="Kategori"
+            android:inputType="text"
             android:textSize="16sp"
             android:layout_marginBottom="12dp" />
 
-        <!-- Stok Awal -->
+        <!-- Price -->
         <EditText
-            android:id="@+id/etStokAwal"
+            android:id="@+id/etPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Stok Awal"
+            android:hint="Harga"
             android:inputType="number"
             android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginBottom="16dp" />
 
         <!-- Stok Gudang -->
         <EditText
@@ -63,35 +64,16 @@
             android:textSize="16sp"
             android:layout_marginBottom="12dp" />
 
-        <!-- Stok Keluar -->
+        <!-- Stok Kantin -->
         <EditText
-            android:id="@+id/etStokKeluar"
+            android:id="@+id/etStokKantin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Stok Keluar"
+            android:hint="Stok Kantin"
             android:inputType="number"
             android:textSize="16sp"
             android:layout_marginBottom="12dp" />
 
-        <!-- Terjual -->
-        <EditText
-            android:id="@+id/etTerjual"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Jumlah Terjual"
-            android:inputType="number"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Harga -->
-        <EditText
-            android:id="@+id/etHarga"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Harga"
-            android:inputType="number"
-            android:textSize="16sp"
-            android:layout_marginBottom="16dp" />
 
         <!-- Tombol Tambah -->
         <Button

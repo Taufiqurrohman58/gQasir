@@ -8,6 +8,7 @@ import com.kerdus.gqasir.data.Repository
 import com.kerdus.gqasir.ui.login.LoginViewModel
 import com.kerdus.gqasir.MainViewModel
 import com.kerdus.gqasir.di.Injection
+import com.kerdus.gqasir.ui.add.AddViewModel
 import com.kerdus.gqasir.ui.edit.EditProdukViewModel
 
 class ViewModelFactory(private val repository: Repository) : ViewModelProvider.NewInstanceFactory() {
@@ -24,6 +25,10 @@ class ViewModelFactory(private val repository: Repository) : ViewModelProvider.N
             modelClass.isAssignableFrom(EditProdukViewModel::class.java) -> {
                 EditProdukViewModel(repository) as T
             }
+            modelClass.isAssignableFrom(AddViewModel::class.java) -> {
+                AddViewModel(repository) as T
+            }
+
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }

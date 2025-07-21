@@ -1,5 +1,6 @@
 package com.kerdus.gqasir.data
 
+import com.kerdus.gqasir.data.api.request.ProdukCreateRequest
 import com.kerdus.gqasir.data.api.request.ProdukUpdateRequest
 import com.kerdus.gqasir.data.api.response.LoginResponse
 import com.kerdus.gqasir.data.api.response.ProdukResponseItem
@@ -29,6 +30,16 @@ class Repository private constructor(
         return apiService.updateProduk(id, "Bearer $token", request)
     }
 
+    suspend fun postProduk(request: ProdukCreateRequest): Boolean {
+        val token = userPreference.getSession().first().token
+        return try {
+            val response = apiService.postProduk("Bearer $token", request)
+            response.isSuccessful
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
+        }
+    }
 
     suspend fun saveSession(user: UserModel) {
         userPreference.saveSession(user)

@@ -41,6 +41,17 @@ class Repository private constructor(
         }
     }
 
+    suspend fun deleteProduk(id: Int): Boolean {
+        val token = userPreference.getSession().first().token
+        return try {
+            val response = apiService.deleteProduk("Bearer $token", id)
+            response.isSuccessful
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
+        }
+    }
+
     suspend fun saveSession(user: UserModel) {
         userPreference.saveSession(user)
     }

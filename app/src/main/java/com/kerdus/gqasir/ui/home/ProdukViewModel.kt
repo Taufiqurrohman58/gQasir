@@ -29,6 +29,18 @@ class ProdukViewModel(private val repository: Repository) : ViewModel() {
             }
         }
     }
+    fun deleteProduk(id: Int, onResult: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            try {
+                val result = repository.deleteProduk(id)
+                onResult(result)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                onResult(false)
+            }
+        }
+    }
+
 
 }
 

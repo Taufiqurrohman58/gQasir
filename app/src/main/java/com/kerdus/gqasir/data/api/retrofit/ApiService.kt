@@ -8,6 +8,7 @@ import com.kerdus.gqasir.data.api.response.ProdukResponseItem
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Headers
@@ -51,6 +52,14 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Body request: ProdukCreateRequest
     ): Response<Unit>
+
+    @DELETE("api/produk/{id}")
+    suspend fun deleteProduk(
+        @Header("Authorization") token: String,
+        @Path("id") id: Int
+    ): Response<Unit>
+
+
 
 
 }

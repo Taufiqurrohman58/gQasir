@@ -3,6 +3,7 @@ package com.kerdus.gqasir.ui.home
 import android.os.Bundle
 import android.view.*
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -63,10 +64,18 @@ class HomeFragment : Fragment() {
             },
 
             onDelete = { product ->
-                val currentList = adapter.getProducts().toMutableList()
-                currentList.remove(product)
-                adapter.updateData(currentList)
+                val id = product.item.id ?: return@ProductAdapter
+                viewModel.deleteProduk(id) { success ->
+                    if (success) {
+                        val currentList = adapter.getProducts().toMutableList()
+                        currentList.remove(product)
+                        adapter.updateData(currentList)
+                    } else {
+                        Toast.makeText(requireContext(), "Gagal menghapus produk", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
+
         )
 
         binding.recyclerViewProducts.layoutManager = LinearLayoutManager(requireContext())
@@ -74,7 +83,7 @@ class HomeFragment : Fragment() {
 
         viewModel.produk.observe(viewLifecycleOwner) { produkList ->
             val converted = produkList.map { Product(it) }
-            fullProductList = converted // simpan semua produk
+            fullProductList = converted
             adapter.updateData(converted)
         }
 

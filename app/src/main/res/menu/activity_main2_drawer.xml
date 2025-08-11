@@ -7,14 +7,18 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/baseline_home_24"
-            android:title="Home" />
+            android:title="Beranda" />
         <item
             android:id="@+id/nav_warehouse"
             android:icon="@drawable/outline_warehouse_24"
-            android:title="Warehouse" />
+            android:title="Gudang" />
         <item
             android:id="@+id/nav_assignment"
             android:icon="@drawable/outline_assignment_24"
-            android:title="Assignment" />
+            android:title="Laporan" />
+        <item
+            android:id="@+id/nav_riwayat"
+            android:icon="@drawable/baseline_history_24"
+            android:title="Riwayat" />
     </group>
 </menu>

@@ -66,7 +66,8 @@
                 android:hint="Stok Gudang"
                 android:inputType="number"
                 android:textSize="16sp"
-                android:layout_marginBottom="12dp" />
+                android:layout_marginBottom="12dp"
+                android:visibility="gone"/>
 
             <!-- Stok Kantin -->
             <EditText
@@ -76,7 +77,8 @@
                 android:hint="Stok Kantin"
                 android:inputType="number"
                 android:textSize="16sp"
-                android:layout_marginBottom="12dp" />
+                android:layout_marginBottom="12dp"
+                android:visibility="gone"/>
 
             <!-- Tombol Simpan -->
             <Button
@@ -95,7 +97,6 @@
     <!-- ProgressBar Loading -->
     <ProgressBar
         android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"

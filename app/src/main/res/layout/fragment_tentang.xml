@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selamat Datang! Aplikasi GQasir dikembangkan sebagai solusi digital untuk membantu proses pencatatan dan pengelolaan penjualan secara menyeluruh. Melalui aplikasi ini, pengguna dapat dengan mudah mencatat seluruh transaksi penjualan, memantau stok barang di kantin maupun gudang, serta mengetahui total pemasukan dan pengeluaran harian. Selain itu, aplikasi ini juga menyediakan fitur histori penjualan."
+
+            android:textSize="16sp"
+            android:paddingBottom="24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kontak untuk pertanyaan terkait Aplikasi:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+        <TextView
+            android:id="@+id/emailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:paddingBottom="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textIsSelectable="true"
+            />
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Developer:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingBottom="24dp"
+            android:layout_marginTop="16dp">
+
+            <!-- Taufiqurrohman -->
+            <LinearLayout
+                android:id="@+id/profileTaufiq"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/imgTaufiq"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/taufiq"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Taufiqurrohman"
+                    android:textSize="14sp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <!-- Robby Wahyudi -->
+            <LinearLayout
+                android:id="@+id/profileRobby"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/imgRobby"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/roby"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Robby Wahyudi"
+                    android:textSize="14sp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

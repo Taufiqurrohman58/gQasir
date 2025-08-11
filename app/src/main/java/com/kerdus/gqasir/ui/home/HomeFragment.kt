@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kerdus.gqasir.R
 import com.kerdus.gqasir.Product
-import com.kerdus.gqasir.ProductAdapter
+import com.kerdus.gqasir.ui.adapter.ProductAdapter
 import com.kerdus.gqasir.data.Repository
 import com.kerdus.gqasir.data.api.retrofit.ApiConfig
 import com.kerdus.gqasir.data.pref.UserPreference
@@ -70,6 +70,7 @@ class HomeFragment : Fragment() {
                         val currentList = adapter.getProducts().toMutableList()
                         currentList.remove(product)
                         adapter.updateData(currentList)
+                        Toast.makeText(requireContext(), "Produk berhasil dihapus", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(requireContext(), "Gagal menghapus produk", Toast.LENGTH_SHORT).show()
                     }

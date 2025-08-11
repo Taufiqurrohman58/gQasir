@@ -1,4 +1,4 @@
-package com.kerdus.gqasir
+package com.kerdus.gqasir.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,8 @@ import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.kerdus.gqasir.Product
+import com.kerdus.gqasir.R
 
 class ProductAdapter(
     private val products: MutableList<Product>,
@@ -35,7 +37,7 @@ class ProductAdapter(
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val product = products[position]
         holder.name.text = product.item.name
-        holder.price.text = product.item.price.toString()
+        holder.price.text = "Rp ${product.item.price.toString()}"
 
         holder.itemView.setOnClickListener {
             onItemClick(product)

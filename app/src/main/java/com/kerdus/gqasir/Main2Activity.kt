@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -15,7 +16,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import com.kerdus.gqasir.databinding.ActivityMain2Binding
 import com.kerdus.gqasir.ui.ViewModelFactory
@@ -33,9 +36,12 @@ class Main2Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         window.statusBarColor = ContextCompat.getColor(this, R.color.purple_500)
 
+
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
         viewModel.getSession().observe(this) { user ->
             if (!user.isLogin) {
                 startActivity(Intent(this, LoginActivity::class.java))
@@ -43,7 +49,7 @@ class Main2Activity : AppCompatActivity() {
             }
         }
 
-        setSupportActionBar(binding.appBarMain2.toolbar)
+
 
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
@@ -62,6 +68,12 @@ class Main2Activity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.action_tentang -> {
+                findNavController(R.id.nav_host_fragment_content_main2)
+                    .navigate(R.id.action_global_tentangFragment)
+                true
+            }
+
             R.id.logoutButton -> {
                 viewModel.logout()
                 true

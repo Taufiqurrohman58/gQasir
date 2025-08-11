@@ -109,6 +109,7 @@ class DetailFragment : Fragment() {
                     val success = repository.postTransaksi(request)
                     if (success) {
                         findNavController().navigate(R.id.action_detailFragment_to_homeFragment)
+                        Toast.makeText(requireContext(), "Berhasil menyimpan transaksi", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(requireContext(), "Gagal menyimpan transaksi", Toast.LENGTH_SHORT).show()
                     }

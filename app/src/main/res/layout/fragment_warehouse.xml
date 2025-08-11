@@ -4,121 +4,117 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ui.detail.DetailFragment">
+    tools:context=".ui.warehouse.WarehouseFragment">
 
-    <!-- Konten Scroll -->
-    <ScrollView
-        android:id="@+id/scrollView"
+    <!-- Kategori Horizontal Scroll -->
+    <HorizontalScrollView
+        android:id="@+id/kategoriScrollView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="80dp"
-        android:fillViewport="true"
-        android:padding="16dp"
+        android:layout_height="wrap_content"
+        android:background="#FAFAFA"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="none"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/buttonContainer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
-            android:id="@+id/contentLayout"
-            android:layout_width="match_parent"
+            android:id="@+id/kategoriContainer"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp">
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:gravity="center_vertical">
 
-            <!-- Nama Barang -->
-            <TextView
-                android:id="@+id/tvNamaBarang"
+            <Button
+                android:id="@+id/btnAll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="18dp"
-                android:text="Nama Barang"
-                android:textColor="#333333"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:text="All"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#009688"
+                android:textColor="#000000" />
 
-            <!-- Stok Masuk -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Stok Gudang"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/valueStokMasuk"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0 tusuk"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-
-            <!-- Pengeluaran dengan EditText dan tombol Simpan -->
-            <TextView
+            <Button
+                android:id="@+id/btnMakanan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pengeluaran"
-                android:textSize="16sp"
-                android:layout_marginBottom="4dp" />
+                android:text="Makanan"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#000000" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/btnMinuman"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="12dp">
+                android:text="Minuman"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#000000" />
 
-                <EditText
-                    android:id="@+id/etPengeluaran"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="Masukkan Stok Keluar"
-                    android:inputType="number"
-                    android:background="@android:drawable/editbox_background"
-                    android:padding="12dp"
-                    android:textSize="16sp" />
+            <Button
+                android:id="@+id/btnSnack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Snack"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#000000" />
 
-                <Button
-                    android:id="@+id/btnSimpanPengeluaran"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Simpan"
-                    android:layout_marginStart="8dp"
-                    android:backgroundTint="#009688"
-                    android:textColor="@android:color/white" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/btnPopmie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Popmie"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/btnTiket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tiket Kolam"
+                android:backgroundTint="#EEEEEE"
+                android:textColor="#000000" />
 
         </LinearLayout>
-    </ScrollView>
+    </HorizontalScrollView>
 
-    <!-- Tombol Edit & Simpan -->
-    <LinearLayout
-        android:id="@+id/buttonContainer"
+    <!-- RecyclerView Produk -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewProducts"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="horizontal"
-        android:gravity="center"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:padding="16dp"
+        tools:listitem="@layout/item_product"
+        app:layout_constraintTop_toBottomOf="@id/kategoriScrollView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/btnEdit"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:text="Edit"
-            android:textColor="#ffffff"
-            android:background="@drawable/bg_button_filled"
-            android:layout_marginEnd="8dp" />
-    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terjadi kesalahan"
+        android:visibility="gone"
+        android:textColor="#FF0000"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

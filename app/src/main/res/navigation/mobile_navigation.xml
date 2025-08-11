@@ -9,10 +9,13 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.kerdus.gqasir.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="Beranda"
         tools:layout="@layout/fragment_home">
 
         <!-- Navigasi ke DetailFragment -->
+        <action
+            android:id="@+id/action_global_tentangFragment"
+            app:destination="@id/tentangFragment" />
         <action
             android:id="@+id/action_HomeFragment_to_DetailFragment"
             app:destination="@id/detailFragment" />
@@ -26,17 +29,20 @@
     <fragment
         android:id="@+id/addFragment"
         android:name="com.kerdus.gqasir.ui.add.AddFragment"
-        android:label="Add">
+        android:label="Tambah Produk">
         <action
             android:id="@+id/action_addFragment_to_homeFragment"
             app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_global_tentangFragment"
+            app:destination="@id/tentangFragment" />
     </fragment>
 
 
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.kerdus.gqasir.ui.detail.DetailFragment"
-        android:label="Detail"
+        android:label="Detail Produk"
         tools:layout="@layout/fragment_detail">
 
         <argument
@@ -51,10 +57,6 @@
             android:name="harga"
             app:argType="string" />
 
-        <!-- Arahkan ke ResultFragment -->
-        <action
-            android:id="@+id/action_detailFragment_to_resultFragment"
-            app:destination="@id/resultFragment" />
 
         <!-- Arahkan ke EditFragment -->
         <action
@@ -63,14 +65,28 @@
         <action
             android:id="@+id/action_detailFragment_to_homeFragment"
             app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_global_tentangFragment"
+            app:destination="@id/tentangFragment" />
     </fragment>
 
-    <!-- Result Fragment -->
+    <!-- Detailg Fragment -->
     <fragment
-        android:id="@+id/resultFragment"
-        android:name="com.kerdus.gqasir.ui.result.ResultFragment"
-        android:label="Result"
-        tools:layout="@layout/fragment_result" />
+        android:id="@+id/detailgFragment"
+        android:name="com.kerdus.gqasir.ui.detail.DetailgFragment"
+        android:label="Detail Produk"
+        tools:layout="@layout/fragment_detailg" >
+        <action
+            android:id="@+id/action_detailgFragment_to_editgFragment"
+            app:destination="@id/editgFragment" />
+
+        <action
+            android:id="@+id/action_detailgFragment_to_homeFragment"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_global_tentangFragment"
+            app:destination="@id/tentangFragment" />
+    </fragment>
 
     <!-- Edit Fragment -->
     <fragment
@@ -83,32 +99,66 @@
         <action
             android:id="@+id/action_editFragment_to_homeFragment"
             app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_global_tentangFragment"
+            app:destination="@id/tentangFragment" />
     </fragment>
 
+    <!-- Editg Fragment -->
+    <fragment
+        android:id="@+id/editgFragment"
+        android:name="com.kerdus.gqasir.ui.edit.EditgFragment"
+        android:label="Edit Produk"
+        tools:layout="@layout/fragment_editg">
+        <action
+            android:id="@+id/action_global_tentangFragment"
+            app:destination="@id/tentangFragment" />
+
+        <action
+            android:id="@+id/action_editgFragment_to_homeFragment"
+            app:destination="@id/nav_home" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/tentangFragment"
+        android:name="com.kerdus.gqasir.ui.tentang.TentangFragment"
+        android:label="Tentang"
+        tools:layout="@layout/fragment_tentang" />
 
     <!-- Tambahan halaman lain jika ada -->
     <fragment
         android:id="@+id/nav_warehouse"
         android:name="com.kerdus.gqasir.ui.warehouse.WarehouseFragment"
-        android:label="Warehouse"
+        android:label="Gudang"
         tools:layout="@layout/fragment_warehouse" >
+        <action
+            android:id="@+id/action_WarehouseFragment_to_DetailgFragment"
+            app:destination="@id/detailgFragment"
+            />
 
-    <action
-        android:id="@+id/action_warehouseFragment_to_editWarehouseFragment"
-        app:destination="@id/editWarehouseFragment" />
-
+        <action
+            android:id="@+id/action_global_tentangFragment"
+            app:destination="@id/tentangFragment" />
     </fragment>
-
-    <fragment
-        android:id="@+id/editWarehouseFragment"
-        android:name="com.kerdus.gqasir.ui.editwarehouse.EditWarehouseFragment"
-        android:label="Edit Warehouse"
-        tools:layout="@layout/fragment_edit_warehouse" />
 
     <fragment
         android:id="@+id/nav_assignment"
         android:name="com.kerdus.gqasir.ui.assigment.AssigmentFragment"
-        android:label="Assigment"
-        tools:layout="@layout/fragment_assigment" />
+        android:label="laporan"
+        tools:layout="@layout/fragment_assigment" >
+    <action
+        android:id="@+id/action_global_tentangFragment"
+        app:destination="@id/tentangFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_riwayat"
+        android:name="com.kerdus.gqasir.ui.riwayat.RiwayatFragment"
+        android:label="Riwayat"
+        tools:layout="@layout/fragment_riwayat">
+    <action
+        android:id="@+id/action_global_tentangFragment"
+        app:destination="@id/tentangFragment" />
+    </fragment>
 
 </navigation>
